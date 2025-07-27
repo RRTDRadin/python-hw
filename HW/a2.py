@@ -1,13 +1,16 @@
-from tkinter import *
-from tkinter import messagebox
+import tkinter as tk
 
-root = Tk()
-root.geometry("200x200")
+window = tk.Tk()
 
-def msg():
-    messagebox.showwarning("Alert", "Stop! Virus Found.")
+for i in range(3):
+    for j in range(3):
+        frame = tk.Frame(
+            master=window,
+            relief=tk.RAISED,
+            borderwidth=1
+        )
+        frame.grid(row=i,column=j, padx=5,pady=5)
+        label = tk.Label(master=frame, text=f"Row {i}\nColumn {j}")
+        label.pack()
 
-button = Button(root, text="Scan for Virus", command=msg)
-button.place(x=40, y=80)
-
-root.mainloop()
+window.mainloop()
