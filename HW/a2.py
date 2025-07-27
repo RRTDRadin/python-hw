@@ -1,16 +1,17 @@
-import tkinter as tk
+new_file = open('New_File.txt', 'x')
+new_file.close()
 
-window = tk.Tk()
+import os
+print("Checking If my file exist or not.......")
+if os.path.exists("my_file.txt"):
+    os.remove("my_file.txt")
+else:
+    print("The file does not exist")
 
-for i in range(3):
-    for j in range(3):
-        frame = tk.Frame(
-            master=window,
-            relief=tk.RAISED,
-            borderwidth=1
-        )
-        frame.grid(row=i,column=j, padx=5,pady=5)
-        label = tk.Label(master=frame, text=f"Row {i}\nColumn {j}")
-        label.pack()
+my_file = open('my_file.txt', 'w')
+my_file.write("Hi! I am Penguin and I am 1 years old.")
+my_file.close()
 
-window.mainloop()
+os.remove('Codingal.txt')
+
+os.rmdir('Folder')

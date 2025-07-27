@@ -1,21 +1,13 @@
-from tkinter import *
+outputFile = open('UpdatedFile.txt', 'w')
 
-root = Tk()
-root.geometry('400x400')
-root.title("main")
+inputFile = open('Repeated.txt', 'r')
 
-def topwin():
-    top = Toplevel()
-    top.geometry("180x100")
-    top.title("toplevel")
+line_seem_so_far = set()
+print("Eliminating duplicate lines....")
 
-    l2 = Label(top, text = "This is toplevel window")
-    l2.pack()
-
-    top.mainloop()
-
-l = Label(root, text = "This is root window")
-btn = Button(root, text = "Click here to open another window", command = topwin)
-
-l.pack()
-btn.pack()
+for line in inputFile:
+    if line not in line_seem_so_far:
+        outputFile.write(line)
+        line_seem_so_far.add(line)
+inputFile.close()
+outputFile.close()
