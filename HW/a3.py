@@ -1,13 +1,12 @@
-outputFile = open('UpdatedFile.txt', 'w')
+file1 = open('CodingalUpdated.txt','w')
 
-inputFile = open('Repeated.txt', 'r')
+file2 = open ('CodingalUpdated.txt','w')
 
-line_seem_so_far = set()
-print("Eliminating duplicate lines....")
+for line in file1.readline():
+    if not (line.staryswith('Coding')):
+        print(line)
 
-for line in inputFile:
-    if line not in line_seem_so_far:
-        outputFile.write(line)
-        line_seem_so_far.add(line)
-inputFile.close()
-outputFile.close()
+file2.write(line)
+
+file2.close()
+file1.close()
