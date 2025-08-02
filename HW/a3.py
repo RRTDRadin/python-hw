@@ -1,12 +1,7 @@
-file1 = open('CodingalUpdated.txt','w')
-
-file2 = open ('CodingalUpdated.txt','w')
-
-for line in file1.readline():
-    if not (line.staryswith('Coding')):
-        print(line)
-
-file2.write(line)
-
-file2.close()
-file1.close()
+def fun3(n):
+    sum=0
+    for i in range(1,n+1):
+        for j in range(1,n+1):
+            sum+=1
+            return sum
+print(fun3(4))

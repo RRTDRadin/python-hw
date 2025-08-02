@@ -1,17 +1,6 @@
-file = open('Codingal.txt', 'r')
-print("Read First line...")
-print(file.readline())
-file.close()
-
-file = open('Codingal.txt', 'r')
-print("Reading multiple lines...")
-print(file.readline())
-print(file.readline())
-print(file.readline())
-file.close()
-
-file = open('Codingal.txt', 'r')
-print("Looping through the lines...")
-for line in file:
-    print(line)
-file.close()
+def fun2(n):
+    sum=0
+    for i in range(1,n+1):
+        sum+=i
+    return sum
+print(fun2(4))
