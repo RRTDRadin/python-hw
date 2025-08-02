@@ -1,12 +1,18 @@
-file_read = open('Codingal.txt','r')
-print("File in Read Mode -")
-print(file_read.read())
-file_read.close()
-file_write = open('Codingal.txt', 'w')
-file_write.write("File in wright mode ....")
-file_write.write("Hi! I am Penguin. I am 1 year old.")
-file_read.close()
-file_append = open('Codingal.txt', 'a')
-file_append.write("\n File in append mode ....")
-file_append.write("Hi! I am Penguin. I am 1 year old.")
-file_append.close()
+class Computer:
+    def __init__(self):
+        self.__maxprice = 900
+
+    def sell(self):
+        print("Selling Price: {}".format(self.__maxprice))
+
+    def setMaxPrice(self, price):
+        self.__maxprice = price
+    
+c = Computer
+c.sell()
+
+c.__maxprice = 1000
+c.sell()
+
+c.setMaxPrice(1000)
+c.sell()
