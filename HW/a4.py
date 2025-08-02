@@ -1,22 +1,22 @@
-fn = open('Codingal.txt', 'r')
+firstfile = input("Enter the name of first file ")
+secondfile = input("Enter the name of second file ")
 
-fn1 = open('CodingalUpdated.txt', 'w')
+f1 = open(firstfile, 'a+')
+f2 = open(secondfile, 'r')
 
-cont = fn.readlines()
-type(cont)
-for i in range(1, len(cont)+1):
-    if(i % 2 !=0):
-        fn1.write(cont[i-1])
-    else:
-        pass
+print('content of first file before apending -\n, f1.read()')
+print('content of second file before apending -\n, f2.read()')
 
-fn1.close()
+f1.close()
+f2.close()
 
-fn1 = open('CodingalUpdated.txt', 'r')
+f1.write(f2.read())
 
-cont1 = fn1.read()
+f1.seek(0)
+f2.seek(0)
 
-print(cont1)
+print('content of first file after apending -\n, f1.read()')
+print('content of second file after apending -\n, f2.read()')
 
-fn.close()
-fn1.close()
+f1.close()
+f2.close()

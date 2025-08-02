@@ -1,7 +1,12 @@
-def fun3(n):
-    sum=0
-    for i in range(1,n+1):
-        for j in range(1,n+1):
-            sum+=1
-            return sum
-print(fun3(4))
+file = open('Codingal.txt', 'r')
+Counter = 0
+
+Content = file.read()
+CoList = Content.split("\n")
+
+for i in CoList:
+    if i:
+            Counter += 1
+
+print("This is the number of lines in the file")
+print(Counter)
